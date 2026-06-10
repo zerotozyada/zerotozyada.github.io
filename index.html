@@ -618,7 +618,61 @@
             </div>
         </div>
     </section>
+<!-- ========================================================== -->
+<!-- AUTOMATIC PDF LIST SECTION (BUTTONS KE NICHE PASTE KAREIN) -->
+<!-- ========================================================== -->
+<div style="max-width: 1200px; margin: 40px auto; padding: 0 20px; font-family: sans-serif;">
+    <h2 style="color: #1f2937; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #7c3aed; padding-bottom: 10px;">
+        📚 All Available Notes & PDFs
+    </h2>
+    
+    <!-- Is list ke andar saare PDFs apne aap generate honge -->
+    <ul id="pdf-list" style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px;">
+        <li style="color: #6b7280;">Loading notes...</li>
+    </ul>
+</div>
 
+<script>
+    const username = 'zerotozyada';
+    const repo = 'zerotozyada.github.io';
+
+    fetch(`https://api.github.com/repos/${username}/${repo}/contents/`)
+    .then(response => response.json())
+    .then(data => {
+        const listElement = document.getElementById('pdf-list');
+        listElement.innerHTML = ''; 
+
+        // Sirf PDF files ko filter karne ke liye
+        const pdfFiles = data.filter(file => file.name.endsWith('.pdf'));
+
+        if(pdfFiles.length === 0) {
+            listElement.innerHTML = '<li style="color: #6b7280;">Koi PDF nahi mila. Pehle GitHub par upload karein!</li>';
+            return;
+        }
+
+        pdfFiles.forEach(file => {
+            const li = document.createElement('li');
+            // Ek sundar card box design bachega har PDF ke liye
+            li.style.cssText = "background: #ffffff; border: 1px solid #e5e7eb; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between;";
+            
+            // File ka naam clean karne ke liye (.pdf hatane ke liye)
+            const cleanName = file.name.replace('.pdf', '').replace(/_/g, ' ');
+
+            li.innerHTML = `
+                <span style="font-weight: 600; color: #374151; font-size: 15px;">📄 ${cleanName}</span>
+                <a href="${file.name}" target="_blank" style="background-color: #7c3aed; color: white; padding: 6px 12px; text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: bold; transition: 0.2s;">
+                    Download
+                </a>
+            `;
+            listElement.appendChild(li);
+        });
+    })
+    .catch(err => {
+        console.error('Error fetching files:', err);
+        document.getElementById('pdf-list').innerHTML = '<li style="color: red;">Files load karne me dikkat aayi.</li>';
+    });
+</script>
+<!-- ========================================================== -->
     <!-- ============================================ -->
     <!-- PDF LIBRARY SECTION -->
     <!-- ============================================ -->

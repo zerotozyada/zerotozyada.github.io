@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero to Zyada — Free Notes, PDFs & Courses for Class 10 & 12</title>
+    <meta name="description" content="Zero to Zyada is a free educational platform offering notes, PDFs, courses, and study material for CBSE Class 10 and Class 12 students. Start learning today!">
+    <meta name="keywords" content="Zero to Zyada, CBSE Notes, Class 10 Notes, Class 12 Notes, Free PDFs, Online Courses, Study Material, Board Exam Preparation">
+    <meta name="author" content="Zero to Zyada">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zerotozyada.github.io/">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Zero to Zyada — Free Notes, PDFs & Courses for Class 10 & 12">
+    <meta property="og:description" content="Your ultimate free study companion for CBSE board exams. Access notes, PDFs, video courses, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zerotozyada.github.io/">
+    <meta property="og:image" content="https://images.pexels.com/photos/37811241/pexels-photo-37811241.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zero to Zyada — Free Education Platform">
+    <meta name="twitter:description" content="Free notes, PDFs, courses for Class 10 & 12 CBSE students.">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Zero to Zyada",
+        "description": "Free educational platform for CBSE Class 10 and Class 12 students",
+        "url": "https://zerotozyada.github.io/"
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @theme {
+            --font-inter: 'Inter', sans-serif;
+            --font-space: 'Space Grotesk', sans-serif;
+            --color-primary: #6C3CE1;
+            --color-primary-light: #8B5CF6;
+            --color-primary-dark: #5521C4;
+            --color-accent: #F59E0B;
+            --color-accent-light: #FBBF24;
+            --color-surface-dark: #0F0F1A;
+            --color-surface-dark-2: #1A1A2E;
+            --color-surface-dark-3: #25253D;
+            --color-success: #10B981;
+            --color-info: #3B82F6;
+            --color-warning: #F59E0B;
+            --color-danger: #EF4444;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .dark body, body.dark-mode {
+            background-color: #0F0F1A;
+            color: #E2E8F0;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #6C3CE1; border-radius: 10px; }
+
+        /* Animated gradient */
+        .gradient-animate {
+            background: linear-gradient(-45deg, #6C3CE1, #8B5CF6, #3B82F6, #06B6D4);
+            background-size: 400% 400%;
+            animation: gradient 8s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating animation */
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Pulse glow */
+        .glow-pulse {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 5px #6C3CE1, 0 0 10px #6C3CE1; }
+            to { box-shadow: 0 0 20px #6C3CE1, 0 0 40px #8B5CF6; }
+        }
+
+        /* Card hover effect */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(108, 60, 225, 0.15);
+        }
+
+        /* Slide in animations */
+        .slide-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .slide-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Typewriter */
+        .typewriter-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+            color: #F59E0B;
+            font-weight: 700;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Glass effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .glass-light {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(108, 60, 225, 0.1);
+        }
+
+        /* Particles */
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(108, 60, 225, 0.4);
+            animation: particle-float 10s infinite ease-in-out;
+        }
+        @keyframes particle-float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)) rotate(720deg); opacity: 0; }
+        }
+
+        /* Progress ring */
+        .progress-ring-circle {
+            transition: stroke-dashoffset 1s ease;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+
+        /* Search overlay */
+        .search-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .search-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Tab active indicator */
+        .tab-active {
+            position: relative;
+        }
+        .tab-active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, #6C3CE1, #8B5CF6);
+            border-radius: 10px;
+        }
+
+        /* Marquee */
+        .marquee-content {
+            animation: marquee 30s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Counter animation */
+        .counter-value {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Dark mode specific overrides */
+        .dark-mode .glass-light {
+            background: rgba(26, 26, 46, 0.85);
+            border: 1px solid rgba(108, 60, 225, 0.2);
+        }
+
+        .dark-mode .card-light {
+            background: #1A1A2E !important;
+            border-color: rgba(108, 60, 225, 0.2) !important;
+            color: #E2E8F0;
+        }
+
+        .dark-mode .card-light h3,
+        .dark-mode .card-light h4,
+        .dark-mode .card-light p,
+        .dark-mode .card-light span {
+            color: #E2E8F0;
+        }
+
+        .dark-mode .text-gray-600 { color: #94A3B8 !important; }
+        .dark-mode .text-gray-700 { color: #CBD5E1 !important; }
+        .dark-mode .text-gray-800 { color: #E2E8F0 !important; }
+        .dark-mode .text-gray-900 { color: #F1F5F9 !important; }
+        .dark-mode .bg-white { background-color: #1A1A2E !important; }
+        .dark-mode .bg-gray-50 { background-color: #0F0F1A !important; }
+        .dark-mode .bg-gray-100 { background-color: #131325 !important; }
+        .dark-mode .border-gray-200 { border-color: #25253D !important; }
+        .dark-mode .border-gray-100 { border-color: #1F1F35 !important; }
+
+        .dark-mode .nav-glass {
+            background: rgba(15, 15, 26, 0.9) !important;
+            border-bottom: 1px solid rgba(108, 60, 225, 0.15);
+        }
+
+        .light-mode .nav-glass {
+            background: rgba(255, 255, 255, 0.9) !important;
+            border-bottom: 1px solid rgba(108, 60, 225, 0.08);
+        }
+
+        /* Notification badge pulse */
+        .badge-pulse {
+            animation: badge-glow 2s ease-in-out infinite;
+        }
+        @keyframes badge-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6); }
+            50% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+        }
+
+        /* Skeleton loading */
+        .skeleton {
+            background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+        }
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Ripple button */
+        .btn-ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-ripple::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: width 0.6s ease, height 0.6s ease, top 0.6s ease, left 0.6s ease;
+            transform: translate(-50%, -50%);
+        }
+        .btn-ripple:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Noise texture overlay */
+        .noise-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="light-mode antialiased">
+
+    <!-- ============================================ -->
+    <!-- SEARCH OVERLAY -->
+    <!-- ============================================ -->
+    <div id="searchOverlay" class="search-overlay fixed inset-0 z-[100] flex items-start justify-center pt-24 px-4">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleSearch()"></div>
+        <div class="relative w-full max-w-2xl bg-white dark-card rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+            <div class="flex items-center px-6 py-4 border-b border-gray-200">
+                <svg class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <input id="searchInput" type="text" placeholder="Search notes, PDFs, courses..." class="flex-1 bg-transparent text-lg outline-none text-gray-800 placeholder-gray-400" oninput="handleSearch(this.value)" autocomplete="off">
+                <kbd class="hidden sm:inline-block px-2 py-1 text-xs font-mono bg-gray-100 text-gray-500 rounded border border-gray-300 ml-3">ESC</kbd>
+            </div>
+            <div id="searchResults" class="max-h-80 overflow-y-auto p-4">
+                <p class="text-center text-gray-400 py-8">Start typing to search across all resources...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- NAVIGATION -->
+    <!-- ============================================ -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-glass backdrop-blur-xl transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-18">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-9 h-9 rounded-xl gradient-animate flex items-center justify-center text-white font-bold text-lg font-[Space_Grotesk] shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform">Z</div>
+                    <span class="text-xl font-bold font-[Space_Grotesk] bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">Zero to Zyada</span>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="#hero" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-all">Home</a>
+                    <a href="#notes" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-all">Notes</a>
+                    <a href="#pdfs" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-all">PDFs</a>
+                    <a href="#courses" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-all">Courses</a>
+                    <a href="#class10" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-all">Class 10</a>
+                    <a href="#class12" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-all">Class 12</a>
+                    <a href="#updates" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-all">Updates</a>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="flex items-center gap-2">
+                    <button onclick="toggleSearch()" class="p-2 rounded-xl hover:bg-purple-50 text-gray-600 hover:text-purple-600 transition-all" title="Search (Ctrl+K)">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </button>
+                    <button onclick="toggleDarkMode()" id="darkModeBtn" class="p-2 rounded-xl hover:bg-purple-50 text-gray-600 hover:text-purple-600 transition-all" title="Toggle Dark Mode">
+                        <svg id="sunIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                        <svg id="moonIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    </button>
+                    <!-- Mobile menu button -->
+                    <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-xl hover:bg-purple-50 text-gray-600 hover:text-purple-600 transition-all" id="mobileMenuBtn">
+                        <svg id="menuOpenIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        <svg id="menuCloseIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="lg:hidden hidden border-t border-gray-200">
+            <div class="px-4 py-3 space-y-1 bg-white">
+                <a href="#hero" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-purple-50 hover:text-purple-600 font-medium transition-all">🏠 Home</a>
+                <a href="#notes" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-purple-50 hover:text-purple-600 font-medium transition-all">📝 Notes</a>
+                <a href="#pdfs" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-purple-50 hover:text-purple-600 font-medium transition-all">📄 PDF Library</a>
+                <a href="#courses" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-purple-50 hover:text-purple-600 font-medium transition-all">🎓 Courses</a>
+                <a href="#class10" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-purple-50 hover:text-purple-600 font-medium transition-all">📊 Class 10</a>
+                <a href="#class12" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-purple-50 hover:text-purple-600 font-medium transition-all">📊 Class 12</a>
+                <a href="#updates" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-purple-50 hover:text-purple-600 font-medium transition-all">🔔 Updates</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- HERO SECTION -->
+    <!-- ============================================ -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50">
+        <!-- Decorative Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 float-animation"></div>
+            <div class="absolute top-40 right-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 float-animation" style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-20 left-1/3 w-72 h-72 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15 float-animation" style="animation-delay: 4s;"></div>
+            <!-- Grid Pattern -->
+            <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#6C3CE1 1px, transparent 1px); background-size: 40px 40px;"></div>
+            <!-- Particles -->
+            <div id="particles"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-center lg:text-left slide-up">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-6">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        Free & Open for All Students
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-gray-900 mb-6">
+                        From
+                        <span class="bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-400 bg-clip-text text-transparent"> Zero</span>
+                        <br>
+                        to
+                        <span class="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent"> Zyada</span>
+                        <span class="typewriter-cursor"></span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Your complete study companion for <strong>CBSE Class 10 & 12</strong>. Access free notes, downloadable PDFs, video courses, and ace your board exams!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#courses" class="btn-ripple inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold text-lg shadow-xl shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 transition-all duration-300">
+                            Start Learning Free
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                        </a>
+                        <a href="#notes" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl border-2 border-purple-200 text-purple-700 font-semibold text-lg hover:bg-purple-50 hover:border-purple-300 transition-all duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                            Browse Notes
+                        </a>
+                    </div>
+                    <!-- Stats -->
+                    <div class="mt-12 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
+                        <div class="text-center">
+                            <div class="counter-value text-3xl font-bold text-gray-900" data-target="500">0</div>
+                            <div class="text-sm text-gray-500 mt-1">Free Notes</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="counter-value text-3xl font-bold text-gray-900" data-target="200">0</div>
+                            <div class="text-sm text-gray-500 mt-1">PDF Downloads</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="counter-value text-3xl font-bold text-gray-900" data-target="50">0</div>
+                            <div class="text-sm text-gray-500 mt-1">Video Courses</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="relative hidden lg:flex justify-center items-center slide-up" style="transition-delay: 0.2s;">
+                    <div class="relative w-full max-w-lg">
+                        <!-- Main Image -->
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-purple-500/20 border border-purple-100">
+                            <img src="https://images.pexels.com/photos/5303515/pexels-photo-5303515.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Student learning online" class="w-full h-80 object-cover" loading="eager">
+                            <div class="absolute inset-0 bg-gradient-to-t from-purple-900/40 to-transparent"></div>
+                        </div>
+                        <!-- Floating Cards -->
+                        <div class="absolute -top-6 -right-6 glass-light rounded-2xl p-4 shadow-xl float-animation" style="animation-delay: 1s;">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center text-xl">✅</div>
+                                <div>
+                                    <div class="text-sm font-bold text-gray-800">Board Ready</div>
+                                    <div class="text-xs text-gray-500">100% Syllabus</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -left-6 glass-light rounded-2xl p-4 shadow-xl float-animation" style="animation-delay: 3s;">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-xl">🏆</div>
+                                <div>
+                                    <div class="text-sm font-bold text-gray-800">Top Rankers</div>
+                                    <div class="text-xs text-gray-500">10K+ Students</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400">
+            <span class="text-xs uppercase tracking-widest">Scroll Down</span>
+            <div class="w-6 h-10 rounded-full border-2 border-gray-300 flex justify-center pt-2">
+                <div class="w-1.5 h-3 rounded-full bg-purple-500 animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- NOTES SECTION -->
+    <!-- ============================================ -->
+    <section id="notes" class="relative py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 slide-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-4">📝 Study Notes</div>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Chapter-wise <span class="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">Notes</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Handcrafted notes covering every chapter, every concept. Made by toppers, for future toppers.</p>
+            </div>
+
+            <!-- Subject Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 slide-up">
+                <button onclick="filterNotes('all')" class="notes-filter active px-6 py-2.5 rounded-xl bg-purple-600 text-white font-medium text-sm transition-all hover:scale-105" data-filter="all">All Subjects</button>
+                <button onclick="filterNotes('math')" class="notes-filter px-6 py-2.5 rounded-xl bg-gray-100 text-gray-700 font-medium text-sm transition-all hover:scale-105 hover:bg-purple-50" data-filter="math">Mathematics</button>
+                <button onclick="filterNotes('science')" class="notes-filter px-6 py-2.5 rounded-xl bg-gray-100 text-gray-700 font-medium text-sm transition-all hover:scale-105 hover:bg-purple-50" data-filter="science">Science</button>
+                <button onclick="filterNotes('english')" class="notes-filter px-6 py-2.5 rounded-xl bg-gray-100 text-gray-700 font-medium text-sm transition-all hover:scale-105 hover:bg-purple-50" data-filter="english">English</button>
+                <button onclick="filterNotes('sst')" class="notes-filter px-6 py-2.5 rounded-xl bg-gray-100 text-gray-700 font-medium text-sm transition-all hover:scale-105 hover:bg-purple-50" data-filter="sst">Social Science</button>
+                <button onclick="filterNotes('hindi')" class="notes-filter px-6 py-2.5 rounded-xl bg-gray-100 text-gray-700 font-medium text-sm transition-all hover:scale-105 hover:bg-purple-50" data-filter="hindi">Hindi</button>
+            </div>
+
+            <!-- Notes Grid -->
+            <div id="notesGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Math Notes -->
+                <div class="note-card card-light card-hover rounded-2xl border border-gray-100 overflow-hidden bg-white" data-subject="math" data-name="Real Numbers">
+                    <div class="h-2 bg-gradient-to-r from-blue-500 to-cyan-400"></div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-2xl">🔢</div>
+                            <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold">Chapter 1</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Real Numbers</h3>
+                        <p class="text-sm text-gray-600 mb-4">Euclid's Division Lemma, Fundamental Theorem of Arithmetic, HCF & LCM, Irrational Numbers</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> 15 min read</span>
+                            </div>
+                            <button class="px-4 py-2 rounded-xl bg-purple-50 text-purple-600 text-sm font-semibold hover:bg-purple-100 transition-all">Read Notes →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-card card-light card-hover rounded-2xl border border-gray-100 overflow-hidden bg-white" data-subject="math" data-name="Polynomials">
+                    <div class="h-2 bg-gradient-to-r from-indigo-500 to-purple-400"></div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-100 flex items-center justify-center text-2xl">📐</div>
+                            <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-semibold">Chapter 2</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Polynomials</h3>
+                        <p class="text-sm text-gray-600 mb-4">Zeros of a polynomial, relationship between zeros and coefficients, division algorithm</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> 12 min read</span>
+                            </div>
+                            <button class="px-4 py-2 rounded-xl bg-purple-50 text-purple-600 text-sm font-semibold hover:bg-purple-100 transition-all">Read Notes →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-card card-light card-hover rounded-2xl border border-gray-100 overflow-hidden bg-white" data-subject="science" data-name="Chemical Reactions">
+                    <div class="h-2 bg-gradient-to-r from-green-500 to-emerald-400"></div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-green-100 flex items-center justify-center text-2xl">⚗️</div>
+                            <span class="px-3 py-1 rounded-full bg-green-50 text-green-600 text-xs font-semibold">Chapter 1</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Chemical Reactions & Equations</h3>
+                        <p class="text-sm text-gray-600 mb-4">Balancing equations, types of reactions, oxidation & reduction, corrosion and rancidity</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> 18 min read</span>
+                            </div>
+                            <button class="px-4 py-2 rounded-xl bg-purple-50 text-purple-600 text-sm font-semibold hover:bg-purple-100 transition-all">Read Notes →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-card card-light card-hover rounded-2xl border border-gray-100 overflow-hidden bg-white" data-subject="english" data-name="A Letter to God">
+                    <div class="h-2 bg-gradient-to-r from-amber-500 to-orange-400"></div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center text-2xl">📖</div>
+                            <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-600 text-xs font-semibold">Chapter 1</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">A Letter to God</h3>
+                        <p class="text-sm text-gray-600 mb-4">Summary, character analysis, important questions, vocabulary and theme exploration</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> 10 min read</span>
+                            </div>
+                            <button class="px-4 py-2 rounded-xl bg-purple-50 text-purple-600 text-sm font-semibold hover:bg-purple-100 transition-all">Read Notes →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-card card-light card-hover rounded-2xl border border-gray-100 overflow-hidden bg-white" data-subject="sst" data-name="Rise of Nationalism in Europe">
+                    <div class="h-2 bg-gradient-to-r from-rose-500 to-pink-400"></div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center text-2xl">🌍</div>
+                            <span class="px-3 py-1 rounded-full bg-rose-50 text-rose-600 text-xs font-semibold">Chapter 1</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Rise of Nationalism in Europe</h3>
+                        <p class="text-sm text-gray-600 mb-4">French Revolution, Napoleon, unification of Germany & Italy, nationalism & imperialism</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> 20 min read</span>
+                            </div>
+                            <button class="px-4 py-2 rounded-xl bg-purple-50 text-purple-600 text-sm font-semibold hover:bg-purple-100 transition-all">Read Notes →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-card card-light card-hover rounded-2xl border border-gray-100 overflow-hidden bg-white" data-subject="hindi" data-name="Surdas ke Pad">
+                    <div class="h-2 bg-gradient-to-r from-teal-500 to-cyan-400"></div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center text-2xl">📜</div>
+                            <span class="px-3 py-1 rounded-full bg-teal-50 text-teal-600 text-xs font-semibold">Chapter 1</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">सूरदास के पद</h3>
+                        <p class="text-sm text-gray-600 mb-4">सूरदास की भक्ति भावना, पदों का अर्थ, काव्य सौंदर्य, महत्वपूर्ण प्रश्नोत्तर</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> 14 min read</span>
+                            </div>
+                            <button class="px-4 py-2 rounded-xl bg-purple-50 text-purple-600 text-sm font-semibold hover:bg-purple-100 transition-all">Read Notes →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PDF LIBRARY SECTION -->
+    <!-- ============================================ -->
+    <section id="pdfs" class="relative py-20 md:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 slide-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-100 text-red-700 text-sm font-medium mb-4">📄 PDF Library</div>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Downloadable <span class="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">PDFs</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Download and study offline. Previous year papers, sample papers, formula sheets, and more.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- PDF Card 1 -->
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 text-center slide-up">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-red-500 to-pink-500 flex items-center justify-center mb-4 shadow-lg shadow-red-500/20">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-1">Previous Year Papers</h4>
+                    <p class="text-sm text-gray-500 mb-4">2020–2025 solved papers with marking scheme</p>
+                    <div class="text-xs text-gray-400 mb-4">📁 45 Files • 120 MB</div>
+                    <button class="w-full py-3 rounded-xl bg-gradient-to-r from-red-500 to-pink-500 text-white font-semibold hover:shadow-lg hover:shadow-red-500/25 transition-all btn-ripple">
+                        Download Free ↓
+                    </button>
+                </div>
+
+                <!-- PDF Card 2 -->
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 text-center slide-up" style="transition-delay: 0.1s;">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center mb-4 shadow-lg shadow-blue-500/20">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-1">Formula Sheets</h4>
+                    <p class="text-sm text-gray-500 mb-4">Quick revision formula sheets for all subjects</p>
+                    <div class="text-xs text-gray-400 mb-4">📁 20 Files • 35 MB</div>
+                    <button class="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all btn-ripple">
+                        Download Free ↓
+                    </button>
+                </div>
+
+                <!-- PDF Card 3 -->
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 text-center slide-up" style="transition-delay: 0.2s;">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-4 shadow-lg shadow-emerald-500/20">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-1">Sample Papers</h4>
+                    <p class="text-sm text-gray-500 mb-4">CBSE official & expert sample papers with solutions</p>
+                    <div class="text-xs text-gray-400 mb-4">📁 30 Files • 80 MB</div>
+                    <button class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold hover:shadow-lg hover:shadow-emerald-500/25 transition-all btn-ripple">
+                        Download Free ↓
+                    </button>
+                </div>
+
+                <!-- PDF Card 4 -->
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 text-center slide-up" style="transition-delay: 0.3s;">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center mb-4 shadow-lg shadow-amber-500/20">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-1">NCERT Solutions</h4>
+                    <p class="text-sm text-gray-500 mb-4">Complete NCERT solutions for all chapters & exercises</p>
+                    <div class="text-xs text-gray-400 mb-4">📁 60 Files • 200 MB</div>
+                    <button class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold hover:shadow-lg hover:shadow-amber-500/25 transition-all btn-ripple">
+                        Download Free ↓
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- COURSES SECTION -->
+    <!-- ============================================ -->
+    <section id="courses" class="relative py-20 md:py-28 bg-white overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-purple-100 rounded-full filter blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16 slide-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-4">🎓 Video Courses</div>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Learn with <span class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Video Courses</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Structured video courses taught by experienced educators. Learn at your own pace, anywhere.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 overflow-hidden slide-up group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/37811241/pexels-photo-37811241.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Mathematics Course" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-green-500 text-white text-xs font-bold">FREE</div>
+                        <div class="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-medium backdrop-blur-sm">40 Lessons</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2 py-1 rounded-lg bg-blue-50 text-blue-600 text-xs font-semibold">Class 10</span>
+                            <span class="px-2 py-1 rounded-lg bg-purple-50 text-purple-600 text-xs font-semibold">Mathematics</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Complete Mathematics — Class 10</h3>
+                        <p class="text-sm text-gray-600 mb-4">Master all 15 chapters with detailed explanations, solved examples, and practice problems.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <div class="flex -space-x-2">
+                                    <div class="w-7 h-7 rounded-full bg-purple-200 flex items-center justify-center text-xs">👨‍🏫</div>
+                                </div>
+                                <span class="text-xs text-gray-500">2.5K students</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-amber-400 text-sm">⭐ 4.9</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 overflow-hidden slide-up group" style="transition-delay: 0.1s;">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/8423119/pexels-photo-8423119.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Science Course" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-green-500 text-white text-xs font-bold">FREE</div>
+                        <div class="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-medium backdrop-blur-sm">55 Lessons</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2 py-1 rounded-lg bg-blue-50 text-blue-600 text-xs font-semibold">Class 10</span>
+                            <span class="px-2 py-1 rounded-lg bg-green-50 text-green-600 text-xs font-semibold">Science</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Complete Science — Class 10</h3>
+                        <p class="text-sm text-gray-600 mb-4">Physics, Chemistry & Biology — all chapters covered with diagrams, experiments, and Q&A.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <div class="flex -space-x-2">
+                                    <div class="w-7 h-7 rounded-full bg-green-200 flex items-center justify-center text-xs">👩‍🔬</div>
+                                </div>
+                                <span class="text-xs text-gray-500">3.1K students</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-amber-400 text-sm">⭐ 4.8</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 overflow-hidden slide-up group" style="transition-delay: 0.2s;">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/11484114/pexels-photo-11484114.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="English Course" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-green-500 text-white text-xs font-bold">FREE</div>
+                        <div class="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-medium backdrop-blur-sm">35 Lessons</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2 py-1 rounded-lg bg-orange-50 text-orange-600 text-xs font-semibold">Class 12</span>
+                            <span class="px-2 py-1 rounded-lg bg-amber-50 text-amber-600 text-xs font-semibold">English</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">English Core — Class 12</h3>
+                        <p class="text-sm text-gray-600 mb-4">Flamingo & Vistas complete coverage, writing skills, grammar, and literature analysis.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <div class="flex -space-x-2">
+                                    <div class="w-7 h-7 rounded-full bg-amber-200 flex items-center justify-center text-xs">👨‍🏫</div>
+                                </div>
+                                <span class="text-xs text-gray-500">1.8K students</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-amber-400 text-sm">⭐ 4.7</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 slide-up">
+                <button class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl border-2 border-purple-200 text-purple-700 font-semibold hover:bg-purple-50 transition-all">
+                    View All Courses
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CLASS 10 DASHBOARD -->
+    <!-- ============================================ -->
+    <section id="class10" class="relative py-20 md:py-28 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 slide-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-4">📊 Dashboard</div>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Class <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">10</span> Dashboard
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Track your preparation progress across all subjects for CBSE Class 10 Board Exams.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Subject Progress Cards -->
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 slide-up">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-2xl">📐</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Mathematics</h4>
+                                <p class="text-xs text-gray-500">15 Chapters</p>
+                            </div>
+                        </div>
+                        <span class="text-2xl font-bold text-blue-600 counter-value">75%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-3 mb-4">
+                        <div class="bg-gradient-to-r from-blue-500 to-cyan-400 h-3 rounded-full transition-all duration-1000" style="width: 75%"></div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div class="rounded-xl bg-green-50 p-2"><div class="text-lg font-bold text-green-600">11</div><div class="text-[10px] text-gray-500">Done</div></div>
+                        <div class="rounded-xl bg-amber-50 p-2"><div class="text-lg font-bold text-amber-600">2</div><div class="text-[10px] text-gray-500">In Progress</div></div>
+                        <div class="rounded-xl bg-gray-50 p-2"><div class="text-lg font-bold text-gray-600">2</div><div class="text-[10px] text-gray-500">Pending</div></div>
+                    </div>
+                </div>
+
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 slide-up" style="transition-delay: 0.1s;">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-green-100 flex items-center justify-center text-2xl">🔬</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Science</h4>
+                                <p class="text-xs text-gray-500">16 Chapters</p>
+                            </div>
+                        </div>
+                        <span class="text-2xl font-bold text-green-600 counter-value">60%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-3 mb-4">
+                        <div class="bg-gradient-to-r from-green-500 to-emerald-400 h-3 rounded-full transition-all duration-1000" style="width: 60%"></div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div class="rounded-xl bg-green-50 p-2"><div class="text-lg font-bold text-green-600">10</div><div class="text-[10px] text-gray-500">Done</div></div>
+                        <div class="rounded-xl bg-amber-50 p-2"><div class="text-lg font-bold text-amber-600">3</div><div class="text-[10px] text-gray-500">In Progress</div></div>
+                        <div class="rounded-xl bg-gray-50 p-2"><div class="text-lg font-bold text-gray-600">3</div><div class="text-[10px] text-gray-500">Pending</div></div>
+                    </div>
+                </div>
+
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 slide-up" style="transition-delay: 0.2s;">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center text-2xl">📖</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">English</h4>
+                                <p class="text-xs text-gray-500">22 Chapters</p>
+                            </div>
+                        </div>
+                        <span class="text-2xl font-bold text-amber-600 counter-value">85%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-3 mb-4">
+                        <div class="bg-gradient-to-r from-amber-500 to-orange-400 h-3 rounded-full transition-all duration-1000" style="width: 85%"></div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div class="rounded-xl bg-green-50 p-2"><div class="text-lg font-bold text-green-600">19</div><div class="text-[10px] text-gray-500">Done</div></div>
+                        <div class="rounded-xl bg-amber-50 p-2"><div class="text-lg font-bold text-amber-600">1</div><div class="text-[10px] text-gray-500">In Progress</div></div>
+                        <div class="rounded-xl bg-gray-50 p-2"><div class="text-lg font-bold text-gray-600">2</div><div class="text-[10px] text-gray-500">Pending</div></div>
+                    </div>
+                </div>
+
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 slide-up" style="transition-delay: 0.3s;">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center text-2xl">🌍</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Social Science</h4>
+                                <p class="text-xs text-gray-500">24 Chapters</p>
+                            </div>
+                        </div>
+                        <span class="text-2xl font-bold text-rose-600 counter-value">50%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-3 mb-4">
+                        <div class="bg-gradient-to-r from-rose-500 to-pink-400 h-3 rounded-full transition-all duration-1000" style="width: 50%"></div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div class="rounded-xl bg-green-50 p-2"><div class="text-lg font-bold text-green-600">12</div><div class="text-[10px] text-gray-500">Done</div></div>
+                        <div class="rounded-xl bg-amber-50 p-2"><div class="text-lg font-bold text-amber-600">4</div><div class="text-[10px] text-gray-500">In Progress</div></div>
+                        <div class="rounded-xl bg-gray-50 p-2"><div class="text-lg font-bold text-gray-600">8</div><div class="text-[10px] text-gray-500">Pending</div></div>
+                    </div>
+                </div>
+
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 slide-up" style="transition-delay: 0.4s;">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center text-2xl">📜</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Hindi</h4>
+                                <p class="text-xs text-gray-500">17 Chapters</p>
+                            </div>
+                        </div>
+                        <span class="text-2xl font-bold text-teal-600 counter-value">40%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-3 mb-4">
+                        <div class="bg-gradient-to-r from-teal-500 to-cyan-400 h-3 rounded-full transition-all duration-1000" style="width: 40%"></div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div class="rounded-xl bg-green-50 p-2"><div class="text-lg font-bold text-green-600">7</div><div class="text-[10px] text-gray-500">Done</div></div>
+                        <div class="rounded-xl bg-amber-50 p-2"><div class="text-lg font-bold text-amber-600">3</div><div class="text-[10px] text-gray-500">In Progress</div></div>
+                        <div class="rounded-xl bg-gray-50 p-2"><div class="text-lg font-bold text-gray-600">7</div><div class="text-[10px] text-gray-500">Pending</div></div>
+                    </div>
+                </div>
+
+                <!-- Overall Progress Card -->
+                <div class="card-light card-hover rounded-2xl bg-gradient-to-br from-purple-600 to-blue-600 p-6 text-white slide-up" style="transition-delay: 0.5s;">
+                    <div class="text-center">
+                        <h4 class="font-bold text-white/90 mb-4">Overall Progress</h4>
+                        <div class="relative w-32 h-32 mx-auto mb-4">
+                            <svg class="w-full h-full" viewBox="0 0 120 120">
+                                <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="10"/>
+                                <circle cx="60" cy="60" r="52" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="105" class="progress-ring-circle"/>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-3xl font-bold">62%</span>
+                            </div>
+                        </div>
+                        <p class="text-white/80 text-sm">Keep going! You're doing great 🚀</p>
+                        <div class="mt-4 grid grid-cols-2 gap-2 text-sm">
+                            <div class="bg-white/10 rounded-xl p-2"><strong>59</strong> Done</div>
+                            <div class="bg-white/10 rounded-xl p-2"><strong>35</strong> Left</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CLASS 12 DASHBOARD -->
+    <!-- ============================================ -->
+    <section id="class12" class="relative py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 slide-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-4">📊 Dashboard</div>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Class <span class="bg-gradient-to-r from-orange-600 to-red-500 bg-clip-text text-transparent">12</span> Dashboard
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive progress tracking for Class 12 Board Exam preparation — Science Stream.</p>
+            </div>
+
+            <!-- Stream Selector -->
+            <div class="flex justify-center gap-3 mb-12 slide-up">
+                <button onclick="switchStream('science')" id="scienceBtn" class="stream-btn active px-6 py-2.5 rounded-xl bg-purple-600 text-white font-medium text-sm transition-all hover:scale-105">🔬 Science</button>
+                <button onclick="switchStream('commerce')" id="commerceBtn" class="stream-btn px-6 py-2.5 rounded-xl bg-gray-100 text-gray-700 font-medium text-sm transition-all hover:scale-105">💼 Commerce</button>
+                <button onclick="switchStream('arts')" id="artsBtn" class="stream-btn px-6 py-2.5 rounded-xl bg-gray-100 text-gray-700 font-medium text-sm transition-all hover:scale-105">🎨 Arts</button>
+            </div>
+
+            <!-- Science Stream -->
+            <div id="scienceStream" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 slide-up">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-2xl">⚡</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Physics</h4>
+                                <p class="text-xs text-gray-500">15 Chapters</p>
+                            </div>
+                        </div>
+                        <span class="text-xl font-bold text-blue-600">70%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-2.5 mb-3">
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-500 h-2.5 rounded-full" style="width: 70%"></div>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span>10 chapters done</span>
+                        <span>5 remaining</span>
+                    </div>
+                </div>
+
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 slide-up" style="transition-delay: 0.1s;">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-green-100 flex items-center justify-center text-2xl">🧪</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Chemistry</h4>
+                                <p class="text-xs text-gray-500">16 Chapters</p>
+                            </div>
+                        </div>
+                        <span class="text-xl font-bold text-green-600">55%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-2.5 mb-3">
+                        <div class="bg-gradient-to-r from-green-500 to-emerald-500 h-2.5 rounded-full" style="width: 55%"></div>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span>9 chapters done</span>
+                        <span>7 remaining</span>
+                    </div>
+                </div>
+
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 slide-up" style="transition-delay: 0.2s;">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-purple-100 flex items-center justify-center text-2xl">📐</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Mathematics</h4>
+                                <p class="text-xs text-gray-500">13 Chapters</p>
+                            </div>
+                        </div>
+                        <span class="text-xl font-bold text-purple-600">80%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-2.5 mb-3">
+                        <div class="bg-gradient-to-r from-purple-500 to-violet-500 h-2.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span>10 chapters done</span>
+                        <span>3 remaining</span>
+                    </div>
+                </div>
+
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 slide-up" style="transition-delay: 0.3s;">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center text-2xl">📖</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">English Core</h4>
+                                <p class="text-xs text-gray-500">16 Chapters</p>
+                            </div>
+                        </div>
+                        <span class="text-xl font-bold text-amber-600">90%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-2.5 mb-3">
+                        <div class="bg-gradient-to-r from-amber-500 to-orange-500 h-2.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span>14 chapters done</span>
+                        <span>2 remaining</span>
+                    </div>
+                </div>
+
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 slide-up" style="transition-delay: 0.4s;">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center text-2xl">🧬</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Biology</h4>
+                                <p class="text-xs text-gray-500">16 Chapters</p>
+                            </div>
+                        </div>
+                        <span class="text-xl font-bold text-rose-600">45%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-2.5 mb-3">
+                        <div class="bg-gradient-to-r from-rose-500 to-pink-500 h-2.5 rounded-full" style="width: 45%"></div>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span>7 chapters done</span>
+                        <span>9 remaining</span>
+                    </div>
+                </div>
+
+                <!-- Overall Card -->
+                <div class="card-light card-hover rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 p-6 text-white slide-up" style="transition-delay: 0.5s;">
+                    <div class="text-center">
+                        <h4 class="font-bold text-white/90 mb-3">Overall Progress</h4>
+                        <div class="relative w-28 h-28 mx-auto mb-3">
+                            <svg class="w-full h-full" viewBox="0 0 120 120">
+                                <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="10"/>
+                                <circle cx="60" cy="60" r="52" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="117" class="progress-ring-circle"/>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-2xl font-bold">68%</span>
+                            </div>
+                        </div>
+                        <p class="text-white/80 text-sm mb-3">Almost there! Push harder 💪</p>
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <div class="bg-white/10 rounded-xl p-2"><strong>50</strong> Done</div>
+                            <div class="bg-white/10 rounded-xl p-2"><strong>26</strong> Left</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commerce Stream (hidden by default) -->
+            <div id="commerceStream" class="hidden grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-2xl">📊</div>
+                        <div><h4 class="font-bold text-gray-900">Accountancy</h4><p class="text-xs text-gray-500">10 Chapters</p></div>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-2.5 mb-2"><div class="bg-gradient-to-r from-blue-500 to-cyan-500 h-2.5 rounded-full" style="width: 65%"></div></div>
+                    <span class="text-sm font-semibold text-blue-600">65% Complete</span>
+                </div>
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-green-100 flex items-center justify-center text-2xl">💰</div>
+                        <div><h4 class="font-bold text-gray-900">Business Studies</h4><p class="text-xs text-gray-500">12 Chapters</p></div>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-2.5 mb-2"><div class="bg-gradient-to-r from-green-500 to-emerald-500 h-2.5 rounded-full" style="width: 70%"></div></div>
+                    <span class="text-sm font-semibold text-green-600">70% Complete</span>
+                </div>
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-100 flex items-center justify-center text-2xl">📈</div>
+                        <div><h4 class="font-bold text-gray-900">Economics</h4><p class="text-xs text-gray-500">10 Chapters</p></div>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-2.5 mb-2"><div class="bg-gradient-to-r from-purple-500 to-violet-500 h-2.5 rounded-full" style="width: 55%"></div></div>
+                    <span class="text-sm font-semibold text-purple-600">55% Complete</span>
+                </div>
+            </div>
+
+            <!-- Arts Stream (hidden by default) -->
+            <div id="artsStream" class="hidden grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center text-2xl">🏛️</div>
+                        <div><h4 class="font-bold text-gray-900">History</h4><p class="text-xs text-gray-500">15 Chapters</p></div>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-2.5 mb-2"><div class="bg-gradient-to-r from-rose-500 to-pink-500 h-2.5 rounded-full" style="width: 60%"></div></div>
+                    <span class="text-sm font-semibold text-rose-600">60% Complete</span>
+                </div>
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center text-2xl">🗳️</div>
+                        <div><h4 class="font-bold text-gray-900">Political Science</h4><p class="text-xs text-gray-500">16 Chapters</p></div>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-2.5 mb-2"><div class="bg-gradient-to-r from-amber-500 to-orange-500 h-2.5 rounded-full" style="width: 50%"></div></div>
+                    <span class="text-sm font-semibold text-amber-600">50% Complete</span>
+                </div>
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center text-2xl">🌐</div>
+                        <div><h4 class="font-bold text-gray-900">Geography</h4><p class="text-xs text-gray-500">10 Chapters</p></div>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-2.5 mb-2"><div class="bg-gradient-to-r from-teal-500 to-cyan-500 h-2.5 rounded-full" style="width: 45%"></div></div>
+                    <span class="text-sm font-semibold text-teal-600">45% Complete</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- LATEST UPDATES / NEWS SECTION -->
+    <!-- ============================================ -->
+    <section id="updates" class="relative py-20 md:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 slide-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-medium mb-4">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    Latest Updates
+                </div>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Stay <span class="bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent">Updated</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Never miss important exam dates, syllabus changes, new materials, and study tips.</p>
+            </div>
+
+            <!-- Scrolling Marquee -->
+            <div class="overflow-hidden rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 mb-12 slide-up">
+                <div class="flex whitespace-nowrap marquee-content">
+                    <span class="mx-8 text-sm font-medium">🔥 CBSE Board Exam 2026 Date Sheet Released!</span>
+                    <span class="mx-8 text-sm font-medium">📝 New Sample Papers Added for Class 10 & 12</span>
+                    <span class="mx-8 text-sm font-medium">🎉 50+ New Video Lessons Uploaded This Week</span>
+                    <span class="mx-8 text-sm font-medium">📢 Revised Syllabus for 2025-26 Now Available</span>
+                    <span class="mx-8 text-sm font-medium">🏆 Our Students Scored 98%+ in Last Year's Boards!</span>
+                    <span class="mx-8 text-sm font-medium">🔥 CBSE Board Exam 2026 Date Sheet Released!</span>
+                    <span class="mx-8 text-sm font-medium">📝 New Sample Papers Added for Class 10 & 12</span>
+                    <span class="mx-8 text-sm font-medium">🎉 50+ New Video Lessons Uploaded This Week</span>
+                    <span class="mx-8 text-sm font-medium">📢 Revised Syllabus for 2025-26 Now Available</span>
+                    <span class="mx-8 text-sm font-medium">🏆 Our Students Scored 98%+ in Last Year's Boards!</span>
+                </div>
+            </div>
+
+            <!-- Updates Timeline -->
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- Update Item 1 -->
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 flex gap-4 slide-up">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 rounded-2xl bg-red-100 flex items-center justify-center text-xl">🚨</div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex flex-wrap items-center gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded-full bg-red-100 text-red-600 text-xs font-bold">IMPORTANT</span>
+                            <span class="text-xs text-gray-400">2 hours ago</span>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">CBSE Board Exam 2026 Date Sheet Released</h4>
+                        <p class="text-sm text-gray-600">The Central Board of Secondary Education has released the official date sheet for Class 10 and Class 12 Board Examinations 2026. Exams start from February 15, 2026.</p>
+                    </div>
+                </div>
+
+                <!-- Update Item 2 -->
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 flex gap-4 slide-up" style="transition-delay: 0.1s;">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 rounded-2xl bg-green-100 flex items-center justify-center text-xl">📚</div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex flex-wrap items-center gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded-full bg-green-100 text-green-600 text-xs font-bold">NEW CONTENT</span>
+                            <span class="text-xs text-gray-400">1 day ago</span>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">New Maths Chapter Notes Added — Trigonometry</h4>
+                        <p class="text-sm text-gray-600">Complete chapter notes for Trigonometry (Class 10) including all identities, solved examples, and HOTS questions now available.</p>
+                    </div>
+                </div>
+
+                <!-- Update Item 3 -->
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 flex gap-4 slide-up" style="transition-delay: 0.2s;">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-xl">🎥</div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex flex-wrap items-center gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-600 text-xs font-bold">VIDEO</span>
+                            <span class="text-xs text-gray-400">3 days ago</span>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">Physics Video Series — Optics Chapter Launched</h4>
+                        <p class="text-sm text-gray-600">8 new video lessons covering Ray Optics and Wave Optics for Class 12 Physics are now live. Includes animated demonstrations.</p>
+                    </div>
+                </div>
+
+                <!-- Update Item 4 -->
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 flex gap-4 slide-up" style="transition-delay: 0.3s;">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-100 flex items-center justify-center text-xl">📄</div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex flex-wrap items-center gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded-full bg-purple-100 text-purple-600 text-xs font-bold">PDF</span>
+                            <span class="text-xs text-gray-400">5 days ago</span>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">CBSE Sample Papers 2026 — All Subjects Available</h4>
+                        <p class="text-sm text-gray-600">Download the latest CBSE Sample Papers for 2025-26 session with detailed marking scheme and solutions for all subjects.</p>
+                    </div>
+                </div>
+
+                <!-- Update Item 5 -->
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 flex gap-4 slide-up" style="transition-delay: 0.4s;">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center text-xl">💡</div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex flex-wrap items-center gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-600 text-xs font-bold">TIPS</span>
+                            <span class="text-xs text-gray-400">1 week ago</span>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">Top 10 Tips to Score 95%+ in Board Exams</h4>
+                        <p class="text-sm text-gray-600">Expert-curated study strategies, time management tips, and last-minute revision techniques to maximize your board exam score.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- TESTIMONIALS -->
+    <!-- ============================================ -->
+    <section class="relative py-20 md:py-28 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 slide-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 text-amber-700 text-sm font-medium mb-4">⭐ Testimonials</div>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    What Students <span class="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">Say</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 slide-up">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 mb-6 italic">"Zero to Zyada notes helped me score 97% in Maths! The formula sheets are a lifesaver during revision week."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-blue-400 flex items-center justify-center text-white font-bold">A</div>
+                        <div>
+                            <div class="font-bold text-gray-900 text-sm">Aarav Sharma</div>
+                            <div class="text-xs text-gray-500">Class 10, Delhi</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 slide-up" style="transition-delay: 0.1s;">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 mb-6 italic">"The video courses are so well-structured! I understood Organic Chemistry in just 3 days. Highly recommended!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-rose-400 flex items-center justify-center text-white font-bold">P</div>
+                        <div>
+                            <div class="font-bold text-gray-900 text-sm">Priya Patel</div>
+                            <div class="text-xs text-gray-500">Class 12, Mumbai</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-light card-hover rounded-2xl bg-white border border-gray-100 p-6 slide-up" style="transition-delay: 0.2s;">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 mb-6 italic">"Best free resource I've found! The previous year papers with solutions gave me real exam confidence. Thank you ZtZ!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-400 flex items-center justify-center text-white font-bold">R</div>
+                        <div>
+                            <div class="font-bold text-gray-900 text-sm">Rohit Kumar</div>
+                            <div class="text-xs text-gray-500">Class 10, Lucknow</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CTA SECTION -->
+    <!-- ============================================ -->
+    <section class="relative py-20 md:py-28 overflow-hidden">
+        <div class="absolute inset-0 gradient-animate"></div>
+        <div class="absolute inset-0 noise-bg"></div>
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center slide-up">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Start Your <br> Journey from Zero to Zyada?
+            </h2>
+            <p class="text-lg text-white/80 mb-10 max-w-2xl mx-auto">
+                Join thousands of students who are already acing their exams with our free resources. No signup required — just start learning!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#notes" class="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-2xl bg-white text-purple-700 font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-all shadow-xl">
+                    Start Learning Now
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                </a>
+                <a href="#pdfs" class="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-2xl border-2 border-white/40 text-white font-bold text-lg hover:bg-white/10 hover:scale-105 transition-all">
+                    Download PDFs
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="relative bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-9 h-9 rounded-xl gradient-animate flex items-center justify-center text-white font-bold text-lg font-[Space_Grotesk]">Z</div>
+                        <span class="text-xl font-bold font-[Space_Grotesk] text-white">Zero to Zyada</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4 leading-relaxed">Your free, comprehensive study companion for CBSE Class 10 & 12 board exam preparation.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-9 h-9 rounded-xl bg-gray-800 hover:bg-purple-600 flex items-center justify-center transition-colors" aria-label="YouTube">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-xl bg-gray-800 hover:bg-purple-600 flex items-center justify-center transition-colors" aria-label="Twitter">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-xl bg-gray-800 hover:bg-purple-600 flex items-center justify-center transition-colors" aria-label="Instagram">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-xl bg-gray-800 hover:bg-purple-600 flex items-center justify-center transition-colors" aria-label="Telegram">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#notes" class="hover:text-purple-400 transition-colors">📝 Notes</a></li>
+                        <li><a href="#pdfs" class="hover:text-purple-400 transition-colors">📄 PDF Library</a></li>
+                        <li><a href="#courses" class="hover:text-purple-400 transition-colors">🎓 Video Courses</a></li>
+                        <li><a href="#class10" class="hover:text-purple-400 transition-colors">📊 Class 10 Dashboard</a></li>
+                        <li><a href="#class12" class="hover:text-purple-400 transition-colors">📊 Class 12 Dashboard</a></li>
+                        <li><a href="#updates" class="hover:text-purple-400 transition-colors">🔔 Latest Updates</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-purple-400 transition-colors">NCERT Solutions</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition-colors">Previous Year Papers</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition-colors">Sample Papers 2026</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition-colors">Formula Sheets</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition-colors">Study Timetable</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition-colors">Exam Tips</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Stay Connected</h4>
+                    <p class="text-sm text-gray-400 mb-4">Get notified about new notes, PDFs, and exam updates.</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Your email" class="flex-1 px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white text-sm placeholder-gray-500 outline-none focus:border-purple-500 transition-colors">
+                        <button class="px-4 py-3 rounded-xl bg-purple-600 text-white font-semibold text-sm hover:bg-purple-700 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-gray-500">© 2026 Zero to Zyada. All rights reserved. Made with 💜 for students.</p>
+                <div class="flex items-center gap-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-purple-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-purple-400 transition-colors">Terms of Use</a>
+                    <a href="#" class="hover:text-purple-400 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- BACK TO TOP -->
+    <!-- ============================================ -->
+    <button id="backToTop" onclick="scrollToTop()" class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-lg shadow-purple-500/25 flex items-center justify-center opacity-0 translate-y-4 pointer-events-none transition-all duration-300 hover:scale-110">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+    </button>
+
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================================ -->
+    <script>
+    // ==========================================
+    // DARK MODE
+    // ==========================================
+    function toggleDarkMode() {
+        const body = document.body;
+        const isDark = body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode', !isDark);
+        document.getElementById('sunIcon').classList.toggle('hidden', !isDark);
+        document.getElementById('moonIcon').classList.toggle('hidden', isDark);
+        localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+    }
+
+    // Load saved dark mode preference
+    (function() {
+        const savedMode = localStorage.getItem('darkMode');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedMode === 'true' || (savedMode === null && prefersDark)) {
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
+            document.getElementById('sunIcon').classList.remove('hidden');
+            document.getElementById('moonIcon').classList.add('hidden');
+        }
+    })();
+
+    // ==========================================
+    // MOBILE MENU
+    // ==========================================
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const openIcon = document.getElementById('menuOpenIcon');
+        const closeIcon = document.getElementById('menuCloseIcon');
+        menu.classList.toggle('hidden');
+        openIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+    }
+
+    function closeMobileMenu() {
+        document.getElementById('mobileMenu').classList.add('hidden');
+        document.getElementById('menuOpenIcon').classList.remove('hidden');
+        document.getElementById('menuCloseIcon').classList.add('hidden');
+    }
+
+    // ==========================================
+    // SEARCH
+    // ==========================================
+    const searchData = [
+        { title: 'Real Numbers — Chapter 1 Notes', category: 'Notes', subject: 'Mathematics', link: '#notes' },
+        { title: 'Polynomials — Chapter 2 Notes', category: 'Notes', subject: 'Mathematics', link: '#notes' },
+        { title: 'Chemical Reactions & Equations Notes', category: 'Notes', subject: 'Science', link: '#notes' },
+        { title: 'A Letter to God — Summary & Q/A', category: 'Notes', subject: 'English', link: '#notes' },
+        { title: 'Rise of Nationalism in Europe Notes', category: 'Notes', subject: 'Social Science', link: '#notes' },
+        { title: 'सूरदास के पद — Chapter Notes', category: 'Notes', subject: 'Hindi', link: '#notes' },
+        { title: 'Previous Year Papers 2020–2025', category: 'PDF', subject: 'All Subjects', link: '#pdfs' },
+        { title: 'Formula Sheets — Quick Revision', category: 'PDF', subject: 'Maths & Science', link: '#pdfs' },
+        { title: 'CBSE Sample Papers 2026', category: 'PDF', subject: 'All Subjects', link: '#pdfs' },
+        { title: 'NCERT Solutions — Complete', category: 'PDF', subject: 'All Subjects', link: '#pdfs' },
+        { title: 'Complete Mathematics — Class 10', category: 'Course', subject: 'Mathematics', link: '#courses' },
+        { title: 'Complete Science — Class 10', category: 'Course', subject: 'Science', link: '#courses' },
+        { title: 'English Core — Class 12', category: 'Course', subject: 'English', link: '#courses' },
+        { title: 'Physics — Class 12 Board Prep', category: 'Course', subject: 'Physics', link: '#courses' },
+        { title: 'Chemistry — Organic & Inorganic', category: 'Course', subject: 'Chemistry', link: '#courses' },
+        { title: 'Trigonometry — Complete Guide', category: 'Notes', subject: 'Mathematics', link: '#notes' },
+        { title: 'Optics — Ray & Wave Optics', category: 'Notes', subject: 'Physics', link: '#notes' },
+        { title: 'CBSE Board Exam 2026 Date Sheet', category: 'Update', subject: 'General', link: '#updates' },
+        { title: 'Class 10 Dashboard', category: 'Dashboard', subject: 'All Subjects', link: '#class10' },
+        { title: 'Class 12 Dashboard', category: 'Dashboard', subject: 'All Subjects', link: '#class12' },
+    ];
+
+    function toggleSearch() {
+        const overlay = document.getElementById('searchOverlay');
+        overlay.classList.toggle('active');
+        if (overlay.classList.contains('active')) {
+            document.getElementById('searchInput').focus();
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchResults').innerHTML = '<p class="text-center text-gray-400 py-8">Start typing to search across all resources...</p>';
+        }
+    }
+
+    function handleSearch(query) {
+        const container = document.getElementById('searchResults');
+        if (!query.trim()) {
+            container.innerHTML = '<p class="text-center text-gray-400 py-8">Start typing to search across all resources...</p>';
+            return;
+        }
+        const results = searchData.filter(item =>
+            item.title.toLowerCase().includes(query.toLowerCase()) ||
+            item.category.toLowerCase().includes(query.toLowerCase()) ||
+            item.subject.toLowerCase().includes(query.toLowerCase())
+        );
+        if (results.length === 0) {
+            container.innerHTML = `<div class="text-center py-8"><div class="text-4xl mb-3">🔍</div><p class="text-gray-400">No results found for "<strong>${query}</strong>"</p></div>`;
+            return;
+        }
+        container.innerHTML = results.map(item => {
+            const categoryColors = {
+                'Notes': 'bg-blue-100 text-blue-600',
+                'PDF': 'bg-red-100 text-red-600',
+                'Course': 'bg-purple-100 text-purple-600',
+                'Update': 'bg-green-100 text-green-600',
+                'Dashboard': 'bg-amber-100 text-amber-600'
+            };
+            const colorClass = categoryColors[item.category] || 'bg-gray-100 text-gray-600';
+            return `
+                <a href="${item.link}" onclick="toggleSearch()" class="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-medium text-gray-900 text-sm">${item.title}</div>
+                        <div class="text-xs text-gray-500 mt-0.5">${item.subject}</div>
+                    </div>
+                    <span class="px-2 py-1 rounded-lg ${colorClass} text-xs font-semibold flex-shrink-0">${item.category}</span>
+                </a>
+            `;
+        }).join('');
+    }
+
+    // Keyboard shortcut for search
+    document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            toggleSearch();
+        }
+        if (e.key === 'Escape') {
+            const overlay = document.getElementById('searchOverlay');
+            if (overlay.classList.contains('active')) {
+                toggleSearch();
+            }
+        }
+    });
+
+    // ==========================================
+    // NOTES FILTER
+    // ==========================================
+    function filterNotes(subject) {
+        // Update button styles
+        document.querySelectorAll('.notes-filter').forEach(btn => {
+            btn.classList.remove('bg-purple-600', 'text-white');
+            btn.classList.add('bg-gray-100', 'text-gray-700');
+        });
+        const activeBtn = document.querySelector(`.notes-filter[data-filter="${subject}"]`);
+        activeBtn.classList.add('bg-purple-600', 'text-white');
+        activeBtn.classList.remove('bg-gray-100', 'text-gray-700');
+
+        // Filter cards
+        document.querySelectorAll('.note-card').forEach(card => {
+            if (subject === 'all' || card.dataset.subject === subject) {
+                card.style.display = '';
+                card.style.animation = 'fadeInUp 0.4s ease forwards';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // ==========================================
+    // STREAM SWITCHER (CLASS 12)
+    // ==========================================
+    function switchStream(stream) {
+        // Update buttons
+        document.querySelectorAll('.stream-btn').forEach(btn => {
+            btn.classList.remove('bg-purple-600', 'text-white');
+            btn.classList.add('bg-gray-100', 'text-gray-700');
+        });
+        document.getElementById(stream + 'Btn').classList.add('bg-purple-600', 'text-white');
+        document.getElementById(stream + 'Btn').classList.remove('bg-gray-100', 'text-gray-700');
+
+        // Show/hide streams
+        document.getElementById('scienceStream').classList.add('hidden');
+        document.getElementById('commerceStream').classList.add('hidden');
+        document.getElementById('artsStream').classList.add('hidden');
+        document.getElementById(stream + 'Stream').classList.remove('hidden');
+    }
+
+    // ==========================================
+    // SCROLL ANIMATIONS
+    // ==========================================
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.slide-up').forEach(el => observer.observe(el));
+
+    // ==========================================
+    // COUNTER ANIMATION
+    // ==========================================
+    function animateCounters() {
+        document.querySelectorAll('.counter-value[data-target]').forEach(counter => {
+            const target = parseInt(counter.dataset.target);
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    counter.textContent = target + '+';
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current) + '+';
+                }
+            }, 16);
+        });
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                counterObserver.disconnect();
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.querySelector('.counter-value[data-target]');
+    if (statsSection) counterObserver.observe(statsSection.closest('.grid'));
+
+    // ==========================================
+    // NAVBAR SCROLL EFFECT
+    // ==========================================
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+        const scrollY = window.scrollY;
+
+        // Navbar shadow
+        if (scrollY > 10) {
+            navbar.classList.add('shadow-lg');
+        } else {
+            navbar.classList.remove('shadow-lg');
+        }
+
+        // Back to top button
+        if (scrollY > 600) {
+            backToTop.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+            backToTop.classList.add('opacity-100', 'translate-y-0');
+        } else {
+            backToTop.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+            backToTop.classList.remove('opacity-100', 'translate-y-0');
+        }
+
+        lastScroll = scrollY;
+    });
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ==========================================
+    // PARTICLES (HERO)
+    // ==========================================
+    (function createParticles() {
+        const container = document.getElementById('particles');
+        if (!container) return;
+        for (let i = 0; i < 20; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.setProperty('--tx', (Math.random() - 0.5) * 200 + 'px');
+            particle.style.setProperty('--ty', (Math.random() - 0.5) * 200 + 'px');
+            particle.style.animationDelay = Math.random() * 10 + 's';
+            particle.style.animationDuration = (8 + Math.random() * 6) + 's';
+            particle.style.width = (3 + Math.random() * 5) + 'px';
+            particle.style.height = particle.style.width;
+            container.appendChild(particle);
+        }
+    })();
+
+    // ==========================================
+    // ACTIVE NAV LINK HIGHLIGHT
+    // ==========================================
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('text-purple-600', 'bg-purple-50');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('text-purple-600', 'bg-purple-50');
+            }
+        });
+    });
+
+    // ==========================================
+    // FADE IN UP ANIMATION (CSS)
+    // ==========================================
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = `
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    `;
+    document.head.appendChild(styleSheet);
+
+    // ==========================================
+    // SMOOTH SCROLL FOR ANCHOR LINKS
+    // ==========================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            e.preventDefault();
+            const target = document.querySelector(targetId);
+            if (target) {
+                const offset = 72;
+                const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            }
+        });
+    });
+    </script>
+</body>
+</html>
